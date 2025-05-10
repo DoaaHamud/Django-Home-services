@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/my_orders.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2>طلباتي</h2>
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+  {% if orders %}
+    <ul>
+      {% for order in orders %}
+        <li>
+          رقم الطلب: {{ order.id }} |
+          الخدمة: {{ order.service.name }} |
+          الحالة: {{ order.get_status_display }} |
+          التاريخ: {{ order.date_created|date:"Y-m-d H:i" }} |
+          {% comment %} <a href="{% url 'add_rating' order.id %}">تقييم</a> {% endcomment %}
+          <a href="{% url 'check_rating_permission' order.id %}" class="btn btn-primary">تقييم</a>
+ِ
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>لا توجد طلبات حتى الآن.</p>
+  {% endif %}
+</body>
+{% endblock %}

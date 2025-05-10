@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/admin_update_order_status.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="color-overlay-container">
+        <h2>تعديل حالة الطلب رقم {{ order.id }}</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">حفظ التعديلات</button>
+        </form>
+    </div>
+    <a href="{% url 'admin_dashboard' %}">عودة للوحة التحكم</a>
+
+</body>
+</html>

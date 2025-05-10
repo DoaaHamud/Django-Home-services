@@ -1,0 +1,72 @@
+/* تنسيق شريط التنقل (Navbar) */
+nav {
+    background-color: #1e3a8a;  /* لون خلفية شريط التنقل مع تدرج الأزرق */
+    padding: 15px 30px;  /* زيادة padding لتوسيع المساحة */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* تأثير ظل خفيف لإضفاء لمسة عصرية */
+}
+
+nav  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;  /* محاذاة العناصر في المنتصف */
+    align-items: center;
+}
+
+nav div.base {
+    margin-right: 25px;  /* مسافة بين العناصر لزيادة المساحة */
+}
+
+nav div.base a {
+    color: #ffffff;  /* لون النص أبيض */
+    text-decoration: none;
+    padding: 12px 20px;  /* إضافة padding أكبر للروابط */
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* إضافة تأثير حركة خفيف */
+}
+
+nav div.base a:hover {
+    background-color: #d88f5e;  /* تغيير اللون إلى الأخضر عند التمرير */
+    transform: scale(1.05);  /* تكبير الحجم قليلاً عند التمرير */
+}
+
+/* تنسيق التذييل (Footer) */
+footer {
+    background-color: #0c5893;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* تأثير ظل خفيف على التذييل */
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    background-color: #f39c12;  /* تغيير اللون إلى البرتقالي عند التمرير */
+    transform: scale(1.1);  /* تكبير الحجم قليلاً عند التمرير */
+}

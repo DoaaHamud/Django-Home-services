@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/admin-dashboard1.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2>لوحة تحكم المشرف</h2>
+
+    <h3>إدارة الطلبات</h3>
+    <form method="get" style="margin-bottom: 20px;">
+      <input type="text" name="username" placeholder="اسم المستخدم" value="{{ username }}">
+      <select name="status">
+          <option value="">جميع الحالات</option>
+          <option value="pending" {% if status == 'pending' %}selected{% endif %}>قيد الانتظار</option>
+          <option value="in_progress" {% if status == 'in_progress' %}selected{% endif %}>قيد التنفيذ</option>
+          <option value="completed" {% if status == 'completed' %}selected{% endif %}>مكتمل</option>
+          <option value="rejected" {% if status == 'rejected' %}selected{% endif %}>مرفوض</option>
+      </select>
+      <button type="submit">بحث</button>
+  </form>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="alert alert-{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+    {% if orders %}
+      <table>
+        <thead>
+          <tr>
+            <th>الطلب ID</th>
+            <th>الخدمة</th>
+            <th>المستخدم</th>
+            <th>الوصف</th>
+            <th>الحالة</th>
+            <th>تاريخ الإنشاء</th>
+            <th>التحكم</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in orders %}
+            <tr>
+              <td>{{ order.id }}</td>
+              <td>{{ order.service.name }}</td>
+              <td>{{ order.user.username }}</td>
+              <td>{{ order.description|truncatewords:10 }}</td>
+              <td>{{ order.get_status_display }}</td>
+              <td>{{ order.date_created|date:"Y-m-d H:i" }}</td>
+              <td>
+                <a href="{% url 'delete_order' order.id %}">حذف</a>
+                <a href="{% url 'admin_update_order' order.id %}">تعديل حالة الطلب</a>
+               
+           
+            
+                
+
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      
+      </table>
+    {% else %}
+      <p>لا توجد طلبات حالياً.</p>
+    {% endif %}
+   
+  
+</body>
+</html>

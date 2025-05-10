@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden; /* لمنع التمرير */
+    position: relative;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(234, 227, 227, 0.1);
+    width: 300px;
+    position: relative; /* لضمان بقاء المحتوى فوق الثلج */
+    z-index: 1;
+
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}

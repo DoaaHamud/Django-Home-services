@@ -1,0 +1,21 @@
+{% for notification in notifications %}
+    <li style="margin-bottom: 15px; {% if notification.is_read %}opacity: 0.6;{% endif %}">
+        {{ notification.message }} <br>
+        <small>{{ notification.created_at|date:"Y-m-d H:i" }}</small><br>
+
+        {% if not notification.is_read %}
+            <form method="post" action="{% url 'mark_notification_as_read' notification.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">تمت القراءة</button>
+            </form>
+        {% else %}
+            <span style="color: green;">✔ تم قراءته</span>
+        {% endif %}
+
+        <!-- زر الحذف -->
+        <form method="post" action="{% url 'delete_notification' notification.id %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" style="color: red;">🗑 حذف</button>
+        </form>
+    </li>
+{% endfor %}

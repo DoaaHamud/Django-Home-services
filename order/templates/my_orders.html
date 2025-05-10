@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/my_orders.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2>طلباتي</h2>
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if orders %}
+      <ul class="order">
+        {% for order in orders %}
+          <li>
+            <strong>الخدمة:</strong> {{ order.service.name }}<br>
+            <strong>الوصف:</strong> {{ order.description }}<br>
+            <strong>الحالة:</strong> {{ order.get_status_display }}<br>
+            <strong>تاريخ الإنشاء:</strong> {{ order.date_created|date:"Y-m-d H:i" }}
+            <a href="{% url 'update_order' order.id %}">تعديل الطلب</a>
+            <a href="{% url 'delete_order' order.id %}" style="color: red;">حذف</a>
+            <a href="{% url 'check_rating_permission' order.id %}" class="btn btn-primary">تقييم</a>
+
+
+          </li>
+          <hr>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>لا توجد طلبات حتى الآن.</p>
+    {% endif %}
+  
+</body>
+</html>
+{% endblock %}

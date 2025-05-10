@@ -1,0 +1,63 @@
+/* service_list1.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #cb11af 0%, #fc9f25 100%)!important;
+    /* background-color: red; */
+    margin: 0;
+    padding: 40px 20px;
+    color: #c95c5c;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #f7971e;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.service-card {
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    padding: 25px 30px;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+}
+
+.service-card:nth-child(1) {
+    background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.35);
+}
+
+.service-card a {
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+    background: rgba(255,255,255,0.3);
+    padding: 12px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}

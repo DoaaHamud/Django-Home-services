@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/service_list.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2>الخدمات المتاحة</h2>
+    <ul>
+        {% for service in services %}
+            <li class="service-card">
+                <h3>{{ service.name }}</h3>
+                <p>{{ service.description|truncatewords:20 }}</p>
+                <a href="{% url 'service_detail' service.id %}">عرض التفاصيل</a>
+            </li>
+        {% endfor %} 
+</body>
+</html>
+{% endblock %}

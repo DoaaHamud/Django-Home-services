@@ -1,0 +1,68 @@
+body {
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.delete-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.delete-container h2 {
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.service-name,
+.description {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.button-group {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.delete-btn,
+.cancel-btn {
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.cancel-btn {
+    background-color: #7f8c8d;
+    color: white;
+    display: inline-block;
+}
+
+.cancel-btn:hover {
+    background-color: #606c76;
+}

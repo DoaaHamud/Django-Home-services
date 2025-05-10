@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+
+    <!-- تخصيص ملفات CSS خاصة بكل صفحة -->
+    {% block custom_css %}
+    {% endblock %}
+    
+    <title>{% block title %}اسم المشروع{% endblock %}</title>
+</head>
+<body>
+    <!-- Navbar أو شريط التنقل -->
+    <header>
+        <nav>
+            <div class="base">
+                <a href="{% url 'logout' %}">تسجيل الخروج</a>
+                <a href="{% url 'orders_to_user' %}">طلباتي</a>
+                <a href="{% url 'user_notifications' %}">الإشعارات</a>
+                
+               
+                {% comment %} <a href="{% url 'get_or_create_chat' user_id=order.user.id %}">بدء محادثة</a> {% endcomment %}
+          
+                
+                        </div>
+        </nav>
+    </header>
+
+    <!-- المحتوى الذي سيتغير بناءً على كل صفحة -->
+    {% block content %}
+    
+    {% endblock %}
+
+    <!-- Footer أو التذييل المشترك -->
+    {% comment %} <footer>
+        <ul>
+            <li><a href="{% url 'logout' %}">تسجيل الخروج</a></li>
+            <li><a href="{% url 'orders_to_user' %}">طلباتي</a></li>
+            <li><a href="">الإشعارات</a></li>
+        </ul>
+
+    </footer> {% endcomment %}
+</body>
+</html>

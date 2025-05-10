@@ -1,0 +1,199 @@
+/* General body styling */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container for dashboard content */
+.dashboard-container {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+h3 {
+    color: #514d4d;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    margin: 20px 0;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+table th, table td {
+    padding: 15px 20px;
+    text-align: center;
+    border: none;
+    background: #f9f9f9;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+table th {
+    background-color: #6c63ff;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(108, 99, 255, 0.3);
+}
+
+table td {
+    background-color: #fff;
+    color: #555;
+}
+
+/* Zebra striping with subtle shadow */
+table tr:nth-child(even) td {
+    background-color: #f0f0ff;
+}
+
+/* Hover effect on rows */
+table tbody tr:hover td {
+    background-color: #dcdcff;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+    cursor: pointer;
+}
+
+/* Links styling */
+a {
+    color: #6c63ff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 3px 8px rgba(108, 99, 255, 0.3);
+}
+
+a:hover {
+    background-color: #6c63ff;
+    color: white;
+    box-shadow: 0 6px 15px rgba(108, 99, 255, 0.6);
+}
+
+/* Paragraph styling for empty states */
+p {
+    text-align: center;
+    color: #999;
+    font-size: 1.1rem;
+    margin-top: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 20px;
+    }
+    table th, table td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
+/* form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form input, form select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+} */
+/* تحسين مظهر نموذج البحث */
+/* form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    background-color: #ffffffcc;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* تنسيق نموذج البحث */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    background-color: #ffffffcc;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* الحقول داخل النموذج */
+form input[type="text"],
+form select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    min-width: 200px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form select:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+    outline: none;
+}
+
+/* زر البحث */
+form button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(108, 99, 255, 0.3);
+}
+
+form button:hover {
+    background-color: #574bff;
+    box-shadow: 0 6px 15px rgba(108, 99, 255, 0.5);
+}
+

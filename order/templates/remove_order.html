@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/remove_order.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="delete-container">
+    <h2>تأكيد حذف الطلب</h2>
+    <p class="service-name">الخدمة: {{ order.service.name }}</p>
+    <p class="description">الوصف: {{ order.description }}</p>
+
+    <form method="post" class="button-group">
+        {% csrf_token %}
+        <button type="submit" class="delete-btn">نعم، احذف الطلب</button>
+        <a href="{% url 'my_orders' %}" class="cancel-btn">إلغاء</a>
+    </form>
+</div>
+</body>
+</html>

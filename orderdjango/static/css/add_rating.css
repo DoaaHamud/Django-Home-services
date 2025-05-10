@@ -1,0 +1,105 @@
+/* ملف: add_rating.css */
+
+body {
+    background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #4a4a4a;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+select, textarea, input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #5848e5;
+    box-shadow: 0 6px 15px rgba(108, 99, 255, 0.4);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #3f3acd;
+}
+.star-rating {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0 20px;
+}
+
+.star-rating .star {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.star-rating .star.selected {
+    color: #FFD700; /* لون النجوم المحددة */
+}
